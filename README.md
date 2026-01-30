@@ -1,6 +1,7 @@
 <h1 align="center">UR5 Robotic Pick-and-Place with Conveyor Tracking</h1>
 
 <p align="center">
+  
 <b>Technologies:</b> PyBullet · Python · Robotics Kinematics · Optimization-Based Control · Computer Vision
 </p>
 
@@ -109,38 +110,48 @@ q̇ = clip(H<sup>−1</sup>g, −q̇<sub>max</sub>, q̇<sub>max</sub>)
 
 <h2>Visual Results</h2>
 
-<p align="center">
+<div align="center">
 
-<b>Figure 1: UR5 CAD Assembly (PTC Creo)<br></b><br><i>High-fidelity CAD model used for mass properties and center-of-gravity estimation.</i><br>
-<img src="https://github.com/user-attachments/assets/0064310f-ba77-4c0c-8835-1862cf67750a" width="800"><br>
-<br><br>
+  <h4>Figure 1: UR5 CAD Assembly (PTC Creo)</h4>
+  <p><i>High-fidelity CAD model used for mass properties and center-of-gravity estimation.</i></p>
+  <img src="https://github.com/user-attachments/assets/15f96110-3e61-4159-be6d-f8f8f350e3d8"
+       width="800" style="height:auto;" />
+  <br><br>
 
-<b>Figure 2: Physics-Based Simulation Environment (PyBullet)<br></b><br><i>Digital twin including conveyor, tray system, and UR5 manipulator.</i>
-<br>
-<img src="https://github.com/user-attachments/assets/3faf17c4-9afb-4a6b-af81-cb04a94e0620" width="1000"><br>
-<br>
+  <h4>Figure 2: Physics-Based Simulation Environment (PyBullet)</h4>
+  <p><i>Digital twin including conveyor, tray system, and UR5 manipulator.</i></p>
+  <img src="https://github.com/user-attachments/assets/0064310f-ba77-4c0c-8835-1862cf67750a"
+       width="800" style="height:auto;" />
+  <br><br>
 
-<b>Figure 3: Vision-Based Workpiece Localization<br></b><br><i>Canny edge detection pipeline for estimating workpiece position and orientation.</i>
-<br>
-<img src="https://github.com/user-attachments/assets/0525d75f-e6a8-42ad-915b-7f41ce874ac5" width="700"><br>
-<br>
+  <h4>Figure 3: Vision-Based Workpiece Localization</h4>
+  <p><i>Canny edge detection pipeline for estimating workpiece position and orientation.</i></p>
+  <img src="https://github.com/user-attachments/assets/3faf17c4-9afb-4a6b-af81-cb04a94e0620"
+       width="800" style="height:auto;" />
+  <br><br>
 
-<b>Figure 4: End-Effector Trajectory during Catch-Point Approach<br></b><br><i>Predicted interception trajectory synchronized with conveyor motion.</i>
-<br>
-<img src="https://github.com/user-attachments/assets/62af23bf-d1eb-4836-b2ec-4b0143c540ac" width="1000"><br>
-<br>
+  <h4>Figure 4: End-Effector Trajectory during Catch-Point Approach</h4>
+  <p><i>Predicted interception trajectory synchronized with conveyor motion.</i></p>
+  <img src="https://github.com/user-attachments/assets/0525d75f-e6a8-42ad-915b-7f41ce874ac5"
+       width="800" style="height:auto;" />
+  <br><br>
 
-<b>Figure 5: Control System Performance<br></b><br><i>Joint torques, joint angles, and tracking errors across all operational phases.</i>
-<br>
-<img src="https://github.com/user-attachments/assets/e10de7a7-748e-4931-afc4-60235f826d1f" width="1000"><br>
-<br>
+  <h4>Figure 5: Control System Performance</h4>
+  <p><i>Joint torques, joint angles, and tracking errors across all operational phases.</i></p>
+  <img src="https://github.com/user-attachments/assets/62af23bf-d1eb-4836-b2ec-4b0143c540ac"
+       width="800" style="height:auto;" />
+  <br><br>
 
-<b>Figure 6: Task-Space Tracking Correlation<br></b><br><i>Correlation between end-effector pose and actual moving workpiece configuration.</i>
-<br>
-<img src="https://github.com/user-attachments/assets/bf706bcb-3b8b-495e-bc05-8b0b0f653a7a" width="800"><br>
-<br>
+  <h4>Figure 6: Task-Space Tracking Correlation</h4>
+  <p><i>Correlation between end-effector pose and actual moving workpiece configuration.</i></p>
+  <img src="https://github.com/user-attachments/assets/e10de7a7-748e-4931-afc4-60235f826d1f"
+       width="800" style="height:auto;" />
+  <br><br>
 
-<b>Figure 7: Full Cycle Path Visualization<br></b><br><i>End-effector path from tray to randomly oriented moving workpieces.</i>
+  <h4>Figure 7: Full Cycle Path Visualization</h4>
+  <p><i>End-effector path from tray to randomly oriented moving workpieces.</i></p>
+  <img src="https://github.com/user-attachments/assets/bf706bcb-3b8b-495e-bc05-8b0b0f653a7a"
+       width="800" style="height:auto;" />
 
+</div>
 
-</p>
