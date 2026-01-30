@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+<robot name="ur5_scaled">
+
+  <link name="world"/>
+ 
+  <link name="base_link">
+
+    <visual>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/base_link.obj"
+              scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/base_link.stl"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <!-- Mass from CAD -->
+      <mass value="2.5930971"/>
+
+      <!-- Center of Gravity (meters) -->
+      <origin xyz="0 0 0.00956848" rpy="0 0 0"/>
+
+      <!-- Inertia tensor at CoG (kg*m^2) -->
+      <inertia
+        ixx="0.00353017"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.00353017"
+        iyz="0.0"
+        izz="0.00689778"/>
+    </inertial>
+
+  </link>
+
+
+  <link name="shoulder_link">
+    <visual>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/link1.obj" scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+      <material name="UR-Blue"><color rgba="0.376 0.576 0.674 1.0"/></material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <!-- Mass from CAD -->
+      <mass value="11.861916"/>
+
+      <!-- Center of Gravity (meters, w.r.t. link frame) -->
+      <origin xyz="0 0.01055527 0.06114473" rpy="0 0 0"/>
+
+      <!-- Inertia tensor at CoG (kg*m^2) 97101 -->
+      <inertia
+        ixx="0.02836081"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.02346383"
+        iyz="0.000"               
+        izz="0.02484871"/>
+    </inertial>
+  </link>
+
+  <link name="upper_arm_link">
+
+    <visual>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/link2.obj"
+              scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/link2.stl"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <!-- Mass from CAD -->
+      <mass value="27.490578"/>
+
+      <!-- Center of Gravity (meters, w.r.t. link frame) -->
+      <origin xyz="0.2125 0 0.12517409" rpy="0 0 0"/>
+
+      <!-- Inertia tensor at CoG (kg*m^2) 94 -->
+      <inertia
+        ixx="0.03453339"
+        ixy="0.000000"
+        ixz="0.0"
+        iyy="0.72972148"
+        iyz="0.0"
+        izz="0.73079928"/>
+    </inertial>
+
+  </link>
+
+  <link name="forearm_link">
+
+    <visual>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/link3.obj"
+              scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/link3.stl"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+    <!-- Mass from CAD -->
+    <mass value="19.185826"/>
+
+    <!-- Center of Gravity (meters, w.r.t. link frame) -->
+    <origin xyz="0.16109694 0 0.02361208" rpy="0 0 0"/>
+
+    <!-- Inertia tensor at CoG (kg*m^2) 46 1313714  -->
+    <inertia
+      ixx="0.01969047"
+      ixy="0.000000"
+      ixz="0.0"
+      iyy="0.40105497"
+      iyz="0.0"
+      izz="0.40128766"/>
+    </inertial>
+  </link>
+
+
+  <link name="wrist_1_link">
+    <visual>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/wrist1.obj" scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+      <material name="UR-Blue"><color rgba="0.376 0.576 0.674 1.0"/></material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/wrist1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+  <!-- Mass from CAD -->
+  <mass value="3.1985511"/>
+
+  <!-- Center of Gravity (meters, w.r.t. link frame) -->
+  <origin xyz="0.00586151 0 0.10413849" rpy="0 0 0"/>
+
+  <!-- Inertia tensor at CoG (kg*m^2) 10989 -->
+  <inertia
+    ixx="0.00271716"
+    ixy="0.0"
+    ixz="0.000"
+    iyy="0.00318534"
+    iyz="0.0"
+    izz="0.00271716"/>
+  </inertial>
+
+  </link>
+
+  <link name="wrist_2_link">
+    <visual>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/wrist2.obj" scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+      <material name="UR-Blue"><color rgba="0.376 0.576 0.674 1.0"/></material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/wrist2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+  <!-- Mass from CAD -->
+  <mass value="3.2763593"/>
+
+  <!-- Center of Gravity (meters, w.r.t. link frame) -->
+  <origin xyz="0 0.00572230 0.08790270" rpy="0 0 0"/>
+
+  <!-- Inertia tensor at CoG (kg*m^2) 12838 -->
+  <inertia
+    ixx="0.00334624"
+    ixy="0.0"
+    ixz="0.0"
+    iyy="0.00287545"
+    iyz="0.000"
+    izz="0.00277448"/>
+  </inertial>
+
+  </link>
+
+  <link name="wrist_3_link">
+    <visual>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/wrist3.obj" scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+      <material name="LightGrey"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/wrist3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+  <!-- Mass from CAD -->
+  <mass value="1.1425590"/>
+
+  <!-- Center of Gravity (meters, w.r.t. link frame) -->
+  <origin xyz="0 0 -0.06294782" rpy="0 0 0"/>
+
+  <!-- Inertia tensor at CoG (kg*m^2) -->
+  <inertia
+    ixx="0.00049292"
+    ixy="0.0"
+    ixz="0.0"
+    iyy="0.00049292"
+    iyz="0.0"
+    izz="0.00076548"/>
+  </inertial>
+
+  </link>
+
+  <link name="ee_link">
+    <visual>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/end_link.obj" scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+      <material name="LightGrey"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/end_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+  <!-- Mass from CAD -->
+  <mass value="0.39135410"/>
+
+  <!-- Center of Gravity (meters, from CAD: -35 mm in Z) -->
+  <origin xyz="0 0 -0.035" rpy="0 0 1.5708"/>
+
+  <!-- Inertia tensor at CoG (kg*m^2), converted from kg*mm^2 -->
+  <inertia
+    ixx="3.2938970e-04"
+    ixy="0.0"
+    ixz="0.0"
+    iyy="8.4793389e-05"
+    iyz="0.0"
+    izz="4.0766052e-04"/>
+  </inertial>
+  </link>
+
+  <link name="right_link">
+
+  <visual>
+    <geometry>
+      <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/right_finger.obj"
+            scale="0.0254 0.0254 0.0254"/>
+    </geometry>
+    <material name="LightGrey">
+      <color rgba="0.7 0.7 0.7 1.0"/>
+    </material>
+  </visual>
+
+  <collision>
+    <geometry>
+      <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/right_finger.stl"
+            scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+
+  <inertial>
+    
+    <mass value="0.15654164"/>
+
+    
+    <origin xyz="0 0 -0.01" rpy="1.5708 0 0"/>
+
+    
+    <inertia
+      ixx="2.2176732e-05"
+      ixy="0.0"
+      ixz="0.0"
+      iyy="5.3485061e-05"
+      iyz="0.0"
+      izz="3.3917355e-05"/>
+  </inertial>
+
+  </link>
+
+
+  <link name="left_link">
+    <visual>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/obj_mtl/left_finger.obj" scale="0.0254 0.0254 0.0254"/>
+      </geometry>
+      <material name="LightGrey"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="D:/project/ROBOTICS/UR5/UR5_creo/stl/left_finger.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+    
+    <mass value="0.15654164"/>
+
+    
+    <origin xyz="0 0 -0.01" rpy="1.5708 0 0"/>
+
+    
+    <inertia
+      ixx="2.2176732e-05"
+      ixy="0.0"
+      ixz="0.0"
+      iyy="5.3485061e-05"
+      iyz="0.0"
+      izz="3.3917355e-05"/>
+  </inertial>
+
+  </link>
+
+  <joint name="world_arm_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="shoulder_pan_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="shoulder_link"/>
+    <origin xyz="0 0 0.0203" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="150" velocity="3.15" lower="-3.14" upper="3.14"/>
+  </joint>
+
+  <joint name="shoulder_lift_joint" type="revolute">
+    <parent link="shoulder_link"/>
+    <child link="upper_arm_link"/>
+    <origin xyz="0 0 0.0689" rpy="-1.5707 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="150" velocity="3.15" lower="-3.14" upper="3.14"/>
+  </joint>
+
+  <joint name="elbow_joint" type="revolute">
+    <parent link="upper_arm_link"/>
+    <child link="forearm_link"/>
+    <origin xyz="0.425 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="150" velocity="3.15" lower="-3.14" upper="3.14"/>
+  </joint>
+
+  <joint name="wrist_1_joint" type="revolute">
+    <parent link="forearm_link"/>
+    <child link="wrist_1_link"/>
+    <origin xyz="0.39225 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="28" velocity="3.2" lower="-3.14" upper="3.14"/>
+  </joint>
+
+  <joint name="wrist_2_joint" type="revolute">
+    <parent link="wrist_1_link"/>
+    <child link="wrist_2_link"/>
+    <origin xyz="0 0 0.110" rpy="-1.5707 0 -1.5707"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="28" velocity="3.2" lower="-3.14" upper="3.14"/>
+  </joint>
+
+  <joint name="wrist_3_joint" type="revolute">
+    <parent link="wrist_2_link"/>
+    <child link="wrist_3_link"/>
+    <origin xyz="0 0 0.09475" rpy="1.5707 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="28" velocity="3.2" lower="-3.14" upper="3.14"/>
+  </joint>
+
+  <joint name="ee_fixed_joint" type="fixed">
+    <parent link="wrist_3_link"/>
+    <child link="ee_link"/>
+    <origin xyz="0 0 -0.1215" rpy="3.1414 0 0"/>
+  </joint>
+
+<joint name="ee_to_right_finger" type="prismatic">
+  <parent link="ee_link"/>
+  <child link="right_link"/>
+  <origin xyz="0 0.045000000 0.0" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="28" velocity="3.2" lower="-0.03" upper="0"/>
+</joint>
+
+<joint name="ee_to_left_finger" type="prismatic">
+  <parent link="ee_link"/>
+  <child link="left_link"/>
+  <origin xyz="0 -0.04500000 0.0" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="28" velocity="3.2" lower="0.0" upper="0.03"/>
+</joint>
+
+
+</robot>
