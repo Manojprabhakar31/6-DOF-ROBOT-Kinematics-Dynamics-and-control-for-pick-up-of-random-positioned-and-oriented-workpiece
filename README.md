@@ -170,20 +170,28 @@ $$\mathbf{q}_i = inverse kinematics(x_i, y_i, \psi_i)$$
 
 
 
-<h2>Results</h2>
-<ul>
-  <li>Stable tracking of moving workpieces under varying conveyor speeds</li>
-  <li>Smooth interception trajectories with bounded joint velocities</li>
-  <li>Accurate task-space tracking with minimal pose error</li>
-  <li>Physically consistent interaction with the simulated environment</li>
-</ul>
+<h2>Results and Limitations</h2>
+        
+  <h3>Key Performance Results</h3>
+  <ul>
+      <li><strong>Stable tracking</strong> of moving workpieces under constant conveyor speeds.</li>
+      <li><strong>Smooth interception trajectories</strong> maintained within bounded joint velocities.</li>
+      <li><strong>High-precision task-space tracking</strong> with minimal pose error.</li>
+      <li><strong>Physically consistent interaction</strong> within the simulated environment.</li>
+  </ul>
 
+  <h3>Technical Limitations</h3>
+  <ul>
+      <li><strong>Perception Constraints:</strong> The system currently requires synchronized image inputs from a dual-camera setup.</li>
+      <li><strong>Collision Sensitivity:</strong> While the object-following method has a 90% success rate, it is susceptible to workpiece collisions during high-error states.</li>
+      <li><strong>Reliability Gap:</strong> A 10% failure margin exists; further refinement of the following methodology or collision-avoidance logic is required to resolve these edge cases.</li>
+  </ul>
+  </section>
 
-
-<h2>Future Extensions</h2>
-<ul>
-  <li>Full rigid-body dynamics with computed-torque control</li>
-  <li>Model Predictive Control (MPC) for interception timing</li>
-  <li>Learning-based grasp planning</li>
-  <li>Multi-camera perception pipeline</li>
-</ul>
+  <h2>Future Extensions</h2>
+  <ul>
+      <li>Implementation of <strong>full rigid-body dynamics</strong> with computed-torque control.</li>
+      <li>Integration of <strong>Model Predictive Control (MPC)</strong> for optimized interception timing.</li>
+      <li>Development of <strong>learning-based grasp planning</strong> for varied object geometries.</li>
+      <li>Expansion to a <strong>multi-camera perception pipeline</strong> for increased system redundancy.</li>
+  </ul>
