@@ -59,22 +59,7 @@ configurations to reach the predicted interception region.
 
 </p>
 
-<h3>3. Trajectory Planning (Joint Space)</h3>
-<p align="justify">
-Smooth joint motion is generated using cubic joint-space polynomials, ensuring continuity of position and velocity:
-</p>
-
-<p align="center">
-q(t) = at<sup>3</sup> + bt<sup>2</sup> + ct + d
-</p>
-
-<p align="center">
-d = q<sub>0</sub>, &nbsp; c = q̇<sub>0</sub><br>
-a = [2(q<sub>0</sub> − q<sub>f</sub>) + (q̇<sub>0</sub> + q̇<sub>f</sub>)t_catch] / t_catch<sup>3</sup><br>
-b = [3(q<sub>f</sub> − q<sub>0</sub>) − (2q̇<sub>0</sub> + q̇<sub>f</sub>)t_catch] / t_catch<sup>2</sup>
-</p>
-
-<h3>4. Reduced-Order Dynamic Approximation</h3>
+<h3>3. Reduced-Order Dynamic Approximation</h3>
 
 <p align="justify">
 To enable real-time torque application without full rigid-body dynamics, a simplified
@@ -101,14 +86,27 @@ dynamic approximation is adopted:
 This captures dominant inertial effects while remaining computationally efficient.
 </p>
 
-<h3>5. Conveyor Synchronization via CLIK (DLS)</h3>
+
+<h3>4. Trajectory Planning (Joint Space)</h3>
 <p align="justify">
-Real-time interception is achieved using Closed-Loop Inverse Kinematics with Damped Least Squares:
+The system utilizes cubic joint-space polynomials, guaranteeing continuity in both position and velocity. This provides a smooth path for real-time interception.
 </p>
 
 <p align="center">
-H q̇ = g
+q(t) = at<sup>3</sup> + bt<sup>2</sup> + ct + d
 </p>
+
+<p align="center">
+d = q<sub>0</sub>, &nbsp; c = q̇<sub>0</sub><br>
+a = [2(q<sub>0</sub> − q<sub>f</sub>) + (q̇<sub>0</sub> + q̇<sub>f</sub>)t_catch] / t_catch<sup>3</sup><br>
+b = [3(q<sub>f</sub> − q<sub>0</sub>) − (2q̇<sub>0</sub> + q̇<sub>f</sub>)t_catch] / t_catch<sup>2</sup>
+</p>
+
+<h3>5. Conveyor Synchronization via CLIK (DLS)</h3>
+<p align="justify">
+The moving workpiece is tracked using a Closed-Loop Inverse Kinematics (CLIK) algorithm. To maintain system stability and handle potential singularities, we implement the Damped Least Squares (DLS) method.
+</p>
+
 
 <p align="center">
 H = J<sup>T</sup>J + λI , &nbsp; λ = 10<sup>−6</sup><br>
@@ -119,6 +117,9 @@ g = J<sup>T</sup>ẋ<sub>d</sub>
 q̇ = clip(H<sup>−1</sup>g, −q̇<sub>max</sub>, q̇<sub>max</sub>)
 </p>
 
+<p align="center">
+$$\mathbf{q}_i = inverse kinematics(x_i, y_i, \psi_i)$$
+</p>
 
 <h2>Visual Results</h2>
 
