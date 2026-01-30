@@ -1,7 +1,6 @@
-<h1 align="center">UR5 Robotic Pick-and-Place with Conveyor Tracking</h1>
-
 <p align="center">
-  
+<h1>6-DOF (UR 5) ROBOT KINEMATICS DYNAMICS AND CONTROL
+SIMULATION USING ANALYTIC MODELS</h1>  
 <b>Technologies:</b> PyBullet · Python · Robotics Kinematics · Optimization-Based Control · Computer Vision
 </p>
 
@@ -39,6 +38,25 @@ with conveyor motion for real-time interception.
 <p align="justify">
 Forward Kinematics (FK) computes the real-time end-effector pose, while Analytic Inverse Kinematics (IK) generates joint
 configurations to reach the predicted interception region.
+
+<h3>UR5 Denavit–Hartenberg(DH) Parameters</h3>
+
+<table align="center">
+  <tr>
+    <th>Joint (i)</th>
+    <th>a<sub>i</sub> (m)</th>
+    <th>d<sub>i</sub> (m)</th>
+    <th>α<sub>i</sub> (rad)</th>
+  </tr>
+  <tr><td>1</td><td>0.00000</td><td>0.08920</td><td>−π/2</td></tr>
+  <tr><td>2</td><td>0.42500</td><td>0.00000</td><td>0</td></tr>
+  <tr><td>3</td><td>0.39225</td><td>0.00000</td><td>0</td></tr>
+  <tr><td>4</td><td>0.00000</td><td>0.11000</td><td>−π/2</td></tr>
+  <tr><td>5</td><td>0.00000</td><td>0.09475</td><td>π/2</td></tr>
+  <tr><td>6</td><td>0.00000</td><td>−0.12150</td><td>π</td></tr>
+</table>
+
+
 </p>
 
 <h3>3. Trajectory Planning (Joint Space)</h3>
@@ -57,13 +75,28 @@ b = [3(q<sub>f</sub> − q<sub>0</sub>) − (2q̇<sub>0</sub> + q̇<sub>f</sub>)
 </p>
 
 <h3>4. Reduced-Order Dynamic Approximation</h3>
+
 <p align="justify">
-To enable real-time torque application without full rigid-body dynamics:
+To enable real-time torque application without full rigid-body dynamics, a simplified
+dynamic approximation is adopted:
 </p>
+
 <ul>
-  <li>Base and arm joints modeled as a yaw-dominant 3-link pendulum</li>
-  <li>Wrist joints approximated as a simple pendulum with roll axis</li>
+  <li>
+    <b>Base and arm joints:</b> Modeled as a yaw-dominant 3-link pendulum capturing the primary inertial effects.
+    <br><br>
+    <img src="https://github.com/user-attachments/assets/a126c2fb-e6ee-4188-993a-71e5e1be2934"
+         width="800" style="height:auto;" />
+  </li>
+
+  <br>
+
+  <li>
+    <b>Wrist joints:</b> Approximated as a simple pendulum with a roll axis to model rotational dynamics.
+    <br><br>
+  </li>
 </ul>
+
 <p align="justify">
 This captures dominant inertial effects while remaining computationally efficient.
 </p>
@@ -87,6 +120,54 @@ q̇ = clip(H<sup>−1</sup>g, −q̇<sub>max</sub>, q̇<sub>max</sub>)
 </p>
 
 
+<h2>Visual Results</h2>
+
+<div align="center">
+
+  <img src="https://github.com/user-attachments/assets/15f96110-3e61-4159-be6d-f8f8f350e3d8"
+       width="800" style="height:auto;" />
+  <h4>Figure 1: UR5 CAD Assembly (PTC Creo)</h4>
+  <p><i>High-fidelity CAD model used for mass properties and center-of-gravity estimation.</i></p>
+  <br><br>
+
+  <img src="https://github.com/user-attachments/assets/0064310f-ba77-4c0c-8835-1862cf67750a"
+       width="800" style="height:auto;" />
+  <h4>Figure 2: Physics-Based Simulation Environment (PyBullet)</h4>
+  <p><i>Digital twin including conveyor, tray system, and UR5 manipulator.</i></p>
+  <br><br>
+
+  <img src="https://github.com/user-attachments/assets/3faf17c4-9afb-4a6b-af81-cb04a94e0620"
+       width="800" style="height:auto;" />
+  <h4>Figure 3: Vision-Based Workpiece Localization</h4>
+  <p><i>Canny edge detection pipeline for estimating workpiece position and orientation.</i></p>
+  <br><br>
+
+  <img src="https://github.com/user-attachments/assets/0525d75f-e6a8-42ad-915b-7f41ce874ac5"
+       width="800" style="height:auto;" />
+  <h4>Figure 4: End-Effector Trajectory during Catch-Point Approach</h4>
+  <p><i>Predicted interception trajectory synchronized with conveyor motion.</i></p>
+  <br><br>
+
+  <img src="https://github.com/user-attachments/assets/62af23bf-d1eb-4836-b2ec-4b0143c540ac"
+       width="800" style="height:auto;" />
+  <h4>Figure 5: Control System Performance</h4>
+  <p><i>Joint torques, joint angles, and tracking errors across all operational phases.</i></p>
+  <br><br>
+
+  <img src="https://github.com/user-attachments/assets/e10de7a7-748e-4931-afc4-60235f826d1f"
+       width="800" style="height:auto;" />
+  <h4>Figure 6: Task-Space Tracking Correlation</h4>
+  <p><i>Correlation between end-effector pose and actual moving workpiece configuration.</i></p>
+  <br><br>
+
+  <img src="https://github.com/user-attachments/assets/bf706bcb-3b8b-495e-bc05-8b0b0f653a7a"
+       width="800" style="height:auto;" />
+  <h4>Figure 7: Full Cycle Path Visualization</h4>
+  <p><i>End-effector path from tray to randomly oriented moving workpieces.</i></p>
+
+</div>
+
+
 
 <h2>Results</h2>
 <ul>
@@ -105,53 +186,3 @@ q̇ = clip(H<sup>−1</sup>g, −q̇<sub>max</sub>, q̇<sub>max</sub>)
   <li>Learning-based grasp planning</li>
   <li>Multi-camera perception pipeline</li>
 </ul>
-
-
-
-<h2>Visual Results</h2>
-
-<div align="center">
-
-  <h4>Figure 1: UR5 CAD Assembly (PTC Creo)</h4>
-  <p><i>High-fidelity CAD model used for mass properties and center-of-gravity estimation.</i></p>
-  <img src="https://github.com/user-attachments/assets/15f96110-3e61-4159-be6d-f8f8f350e3d8"
-       width="800" style="height:auto;" />
-  <br><br>
-
-  <h4>Figure 2: Physics-Based Simulation Environment (PyBullet)</h4>
-  <p><i>Digital twin including conveyor, tray system, and UR5 manipulator.</i></p>
-  <img src="https://github.com/user-attachments/assets/0064310f-ba77-4c0c-8835-1862cf67750a"
-       width="800" style="height:auto;" />
-  <br><br>
-
-  <h4>Figure 3: Vision-Based Workpiece Localization</h4>
-  <p><i>Canny edge detection pipeline for estimating workpiece position and orientation.</i></p>
-  <img src="https://github.com/user-attachments/assets/3faf17c4-9afb-4a6b-af81-cb04a94e0620"
-       width="800" style="height:auto;" />
-  <br><br>
-
-  <h4>Figure 4: End-Effector Trajectory during Catch-Point Approach</h4>
-  <p><i>Predicted interception trajectory synchronized with conveyor motion.</i></p>
-  <img src="https://github.com/user-attachments/assets/0525d75f-e6a8-42ad-915b-7f41ce874ac5"
-       width="800" style="height:auto;" />
-  <br><br>
-
-  <h4>Figure 5: Control System Performance</h4>
-  <p><i>Joint torques, joint angles, and tracking errors across all operational phases.</i></p>
-  <img src="https://github.com/user-attachments/assets/62af23bf-d1eb-4836-b2ec-4b0143c540ac"
-       width="800" style="height:auto;" />
-  <br><br>
-
-  <h4>Figure 6: Task-Space Tracking Correlation</h4>
-  <p><i>Correlation between end-effector pose and actual moving workpiece configuration.</i></p>
-  <img src="https://github.com/user-attachments/assets/e10de7a7-748e-4931-afc4-60235f826d1f"
-       width="800" style="height:auto;" />
-  <br><br>
-
-  <h4>Figure 7: Full Cycle Path Visualization</h4>
-  <p><i>End-effector path from tray to randomly oriented moving workpieces.</i></p>
-  <img src="https://github.com/user-attachments/assets/bf706bcb-3b8b-495e-bc05-8b0b0f653a7a"
-       width="800" style="height:auto;" />
-
-</div>
-
