@@ -48,12 +48,12 @@ configurations to reach the predicted interception region.
     <th>d<sub>i</sub> (m)</th>
     <th>α<sub>i</sub> (rad)</th>
   </tr>
-  <tr><td>1</td><td>0.00000</td><td>0.08920</td><td>−π/2</td></tr>
-  <tr><td>2</td><td>0.42500</td><td>0.00000</td><td>0</td></tr>
-  <tr><td>3</td><td>0.39225</td><td>0.00000</td><td>0</td></tr>
-  <tr><td>4</td><td>0.00000</td><td>0.11000</td><td>−π/2</td></tr>
-  <tr><td>5</td><td>0.00000</td><td>0.09475</td><td>π/2</td></tr>
-  <tr><td>6</td><td>0.00000</td><td>−0.12150</td><td>π</td></tr>
+  <tr><td>1</td><td>0</td><td>0.08920</td><td>−π/2</td></tr>
+  <tr><td>2</td><td>0.42500</td><td>0</td><td>0</td></tr>
+  <tr><td>3</td><td>0.39225</td><td>0</td><td>0</td></tr>
+  <tr><td>4</td><td>0</td><td>0.11000</td><td>−π/2</td></tr>
+  <tr><td>5</td><td>0</td><td>0.09475</td><td>π/2</td></tr>
+  <tr><td>6</td><td>0</td><td>−0.12150</td><td>π</td></tr>
 </table>
 
 
