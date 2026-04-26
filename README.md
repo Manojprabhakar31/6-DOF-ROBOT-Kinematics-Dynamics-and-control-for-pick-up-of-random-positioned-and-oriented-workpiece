@@ -71,7 +71,7 @@ dynamic approximation is adopted:
     <b>Base and arm joints:</b> Modeled as a yaw-dominant 3-link pendulum capturing the primary inertial effects.
     <br><br>
     <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/42fd9172-73a8-44d4-865e-797b33562a4c" />
-    <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c6ebccb3-a2a4-4606-8540-c9508c12640d" />
+    <img width="812" height="1024" alt="image" src="https://github.com/user-attachments/assets/6bc42643-03df-43b4-8561-8309b67649a4" />
 
   </li>
 
